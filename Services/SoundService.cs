@@ -1,4 +1,5 @@
-﻿using SoundLiveStream.Models;
+﻿using SoundLiveStream.DTO;
+using SoundLiveStream.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,13 +12,25 @@ namespace SoundLiveStream.Services
 {
     public class SoundService
     {
-        private readonly string _dataFile = @"Data\sound.xml";
+        private readonly string _dataFile = @"C:\Data\sound.xml";
+        private readonly string _dataFile2 = @"C:\Data\category.xml";
+
         private readonly XmlSerializer _serializer = new XmlSerializer(typeof(List<Sound>));
+        private readonly XmlSerializer _serializer2 = new XmlSerializer(typeof(List<Category>));
+
         public List<Sound> Sounds { get; set; }
+        public List<Category> Categories { get; set; }
         public SoundService()
         {
-            if (!File.Exists(_dataFile))
+            if (File.Exists(_dataFile) && !File.Exists(_dataFile2))
             {
+                Categories = new List<Category>()
+                {
+                     new Category(){Id = 1, Name ="Hài"},
+                     new Category(){Id = 2, Name ="Kinh Dị"},
+                     new Category(){Id = 3, Name ="Troll"},
+                     new Category(){Id = 4, Name ="Winner"},
+                };
                 Sounds = new List<Sound>()
                 {
                     new Sound()
@@ -47,11 +60,32 @@ namespace SoundLiveStream.Services
             {
                 using var stream = File.OpenRead(_dataFile);
                 Sounds = _serializer.Deserialize(stream) as List<Sound>;
+
+                using var stream2 = File.OpenRead(_dataFile2);
+                Categories = _serializer2.Deserialize(stream2) as List<Category>;
             }
         }
         public List<Sound> GetAll()
         {
             return Sounds.ToList();
+        }
+        public List<SoundOutput> Get()
+        {
+            var qurey = Sounds.Join(
+                Categories,
+                s => s.CategoryId,
+                c => c.Id,
+                (s, c) => new SoundOutput()
+                {
+                    Name = s.Name,
+                    Id = s.Id,
+                    Link = s.Link,
+                    CategoryId = s.CategoryId,
+                    CategoryName = c.Name
+                }
+               ).ToList();
+            return qurey;
+            
         }
         public Sound GetById(int id)
         {
@@ -69,13 +103,30 @@ namespace SoundLiveStream.Services
                 return false;
             }
             Sounds.Add(sound);
-            SaveChanges();
+            if (SaveChanges() != 1)
+            {
+                return false;
+            }
             return true;
         }
-        public void SaveChanges()
+        public int SaveChanges()
         {
-            using var stream = File.Create(_dataFile);
-            _serializer.Serialize(stream, Sounds);
+            if (!Directory.Exists(@"C:\Data"))
+            {
+                Directory.CreateDirectory(@"C:\Data");
+            }
+            try
+            {
+                using var stream = File.Create(_dataFile);
+                _serializer.Serialize(stream, Sounds);
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }  
         }
     }
 }

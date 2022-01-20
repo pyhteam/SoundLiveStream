@@ -11,7 +11,7 @@ namespace SoundLiveStream.Services
 {
     public class CategoryService
     {
-        private readonly string _dataFile = @"Data\category.xml";
+        private readonly string _dataFile = @"C:\Data\category.xml";
         private readonly XmlSerializer _serializer = new XmlSerializer(typeof(List<Category>));
         public List<Category> Categories { get; set; }
 

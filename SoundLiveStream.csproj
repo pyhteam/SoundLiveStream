@@ -8,18 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <COMReference Include="QuartzTypeLib">
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>56a868b0-0ad4-11ce-b03a-0020af0ba770</Guid>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
     <PackageReference Include="SunnyUI" Version="3.1.0" />
   </ItemGroup>
 
@@ -39,7 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Reference Include="PresentationCore">
+      <HintPath>C:\Users\pyhte\Downloads\presentationcore\PresentationCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

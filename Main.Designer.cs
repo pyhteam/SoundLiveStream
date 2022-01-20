@@ -40,11 +40,6 @@
             this.uiTabControlMenuHome = new Sunny.UI.UITabControlMenu();
             this.tabPageHome = new System.Windows.Forms.TabPage();
             this.uiTabControlSound = new Sunny.UI.UITabControl();
-            this.tabControlPageCategory = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pannelSound = new Sunny.UI.UIPanel();
-            this.lbTitileSound = new Sunny.UI.UILabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.uiTitlePanel1 = new Sunny.UI.UITitlePanel();
             this.uiMarkLabel2 = new Sunny.UI.UIMarkLabel();
             this.uiMarkLabel1 = new Sunny.UI.UIMarkLabel();
@@ -57,8 +52,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPageSoundHot = new System.Windows.Forms.TabPage();
             this.tabPageAddSound = new System.Windows.Forms.TabPage();
-            this.uiTitlePanel3 = new Sunny.UI.UITitlePanel();
-            this.gvListSound = new Sunny.UI.UIDataGridView();
             this.uiTitlePanel2 = new Sunny.UI.UITitlePanel();
             this.btnDelete = new Sunny.UI.UIButton();
             this.btnEdit = new Sunny.UI.UIButton();
@@ -67,7 +60,7 @@
             this.uiLabel2 = new Sunny.UI.UILabel();
             this.uiLabel1 = new Sunny.UI.UILabel();
             this.ccbCategory = new Sunny.UI.UIComboBox();
-            this.LinkSound = new Sunny.UI.UITextBox();
+            this.txtLinkSound = new Sunny.UI.UITextBox();
             this.txtNameSound = new Sunny.UI.UITextBox();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.lbSoundPlaying = new Sunny.UI.UILabel();
@@ -76,25 +69,20 @@
             this.btnLogout = new Sunny.UI.UIButton();
             this.lbUserName = new Sunny.UI.UILabel();
             this.uiAvatar1 = new Sunny.UI.UIAvatar();
+            this.uiDataGridViewSound = new Sunny.UI.UIDataGridView();
             this.uiNavBarMain.SuspendLayout();
             this.uiTabControlMenuHome.SuspendLayout();
             this.tabPageHome.SuspendLayout();
-            this.uiTabControlSound.SuspendLayout();
-            this.tabControlPageCategory.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.pannelSound.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.uiTitlePanel1.SuspendLayout();
             this.tabPageCategory.SuspendLayout();
             this.pannelCategory.SuspendLayout();
             this.uiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPageAddSound.SuspendLayout();
-            this.uiTitlePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvListSound)).BeginInit();
             this.uiTitlePanel2.SuspendLayout();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiDataGridViewSound)).BeginInit();
             this.SuspendLayout();
             // 
             // lbClose
@@ -183,7 +171,6 @@
             // 
             // uiTabControlSound
             // 
-            this.uiTabControlSound.Controls.Add(this.tabControlPageCategory);
             this.uiTabControlSound.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.uiTabControlSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiTabControlSound.ItemSize = new System.Drawing.Size(150, 40);
@@ -196,65 +183,6 @@
             this.uiTabControlSound.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.uiTabControlSound.TabIndex = 1;
             this.uiTabControlSound.TabUnSelectedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            // 
-            // tabControlPageCategory
-            // 
-            this.tabControlPageCategory.Controls.Add(this.flowLayoutPanel1);
-            this.tabControlPageCategory.Location = new System.Drawing.Point(0, 40);
-            this.tabControlPageCategory.Name = "tabControlPageCategory";
-            this.tabControlPageCategory.Size = new System.Drawing.Size(802, 364);
-            this.tabControlPageCategory.TabIndex = 0;
-            this.tabControlPageCategory.Text = "Categories";
-            this.tabControlPageCategory.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.pannelSound);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 364);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // pannelSound
-            // 
-            this.pannelSound.Controls.Add(this.lbTitileSound);
-            this.pannelSound.Controls.Add(this.pictureBox1);
-            this.pannelSound.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.pannelSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pannelSound.Location = new System.Drawing.Point(4, 5);
-            this.pannelSound.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pannelSound.MinimumSize = new System.Drawing.Size(1, 1);
-            this.pannelSound.Name = "pannelSound";
-            this.pannelSound.Size = new System.Drawing.Size(388, 44);
-            this.pannelSound.Style = Sunny.UI.UIStyle.Custom;
-            this.pannelSound.TabIndex = 0;
-            this.pannelSound.Text = null;
-            this.pannelSound.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbTitileSound
-            // 
-            this.lbTitileSound.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbTitileSound.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTitileSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbTitileSound.Location = new System.Drawing.Point(46, 0);
-            this.lbTitileSound.Name = "lbTitileSound";
-            this.lbTitileSound.Size = new System.Drawing.Size(342, 44);
-            this.lbTitileSound.Style = Sunny.UI.UIStyle.Custom;
-            this.lbTitileSound.TabIndex = 2;
-            this.lbTitileSound.Text = "Anh Nhớ Em.mp3";
-            this.lbTitileSound.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::SoundLiveStream.Properties.Resources.mp3__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // uiTitlePanel1
             // 
@@ -407,7 +335,7 @@
             // 
             // tabPageAddSound
             // 
-            this.tabPageAddSound.Controls.Add(this.uiTitlePanel3);
+            this.tabPageAddSound.Controls.Add(this.uiDataGridViewSound);
             this.tabPageAddSound.Controls.Add(this.uiTitlePanel2);
             this.tabPageAddSound.Location = new System.Drawing.Point(201, 0);
             this.tabPageAddSound.Name = "tabPageAddSound";
@@ -415,68 +343,6 @@
             this.tabPageAddSound.TabIndex = 3;
             this.tabPageAddSound.Text = "Thêm Âm Thanh";
             this.tabPageAddSound.UseVisualStyleBackColor = true;
-            // 
-            // uiTitlePanel3
-            // 
-            this.uiTitlePanel3.Controls.Add(this.gvListSound);
-            this.uiTitlePanel3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uiTitlePanel3.Location = new System.Drawing.Point(4, 264);
-            this.uiTitlePanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiTitlePanel3.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiTitlePanel3.Name = "uiTitlePanel3";
-            this.uiTitlePanel3.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
-            this.uiTitlePanel3.Size = new System.Drawing.Size(810, 277);
-            this.uiTitlePanel3.TabIndex = 1;
-            this.uiTitlePanel3.Text = "Danh Sách Âm Thanh";
-            this.uiTitlePanel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gvListSound
-            // 
-            this.gvListSound.AllowUserToAddRows = false;
-            this.gvListSound.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.gvListSound.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvListSound.BackgroundColor = System.Drawing.Color.White;
-            this.gvListSound.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvListSound.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gvListSound.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvListSound.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gvListSound.EnableHeadersVisualStyles = false;
-            this.gvListSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gvListSound.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.gvListSound.Location = new System.Drawing.Point(3, 38);
-            this.gvListSound.Name = "gvListSound";
-            this.gvListSound.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvListSound.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.gvListSound.RowHeight = 25;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.gvListSound.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.gvListSound.RowTemplate.Height = 25;
-            this.gvListSound.SelectedIndex = -1;
-            this.gvListSound.ShowGridLine = true;
-            this.gvListSound.Size = new System.Drawing.Size(804, 236);
-            this.gvListSound.TabIndex = 0;
             // 
             // uiTitlePanel2
             // 
@@ -487,7 +353,7 @@
             this.uiTitlePanel2.Controls.Add(this.uiLabel2);
             this.uiTitlePanel2.Controls.Add(this.uiLabel1);
             this.uiTitlePanel2.Controls.Add(this.ccbCategory);
-            this.uiTitlePanel2.Controls.Add(this.LinkSound);
+            this.uiTitlePanel2.Controls.Add(this.txtLinkSound);
             this.uiTitlePanel2.Controls.Add(this.txtNameSound);
             this.uiTitlePanel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uiTitlePanel2.Location = new System.Drawing.Point(4, 8);
@@ -532,6 +398,7 @@
             this.btnAdd.Size = new System.Drawing.Size(120, 35);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // uiLabel3
             // 
@@ -579,21 +446,21 @@
             this.ccbCategory.Text = "Choose...!";
             this.ccbCategory.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // LinkSound
+            // txtLinkSound
             // 
-            this.LinkSound.ButtonSymbol = 61761;
-            this.LinkSound.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LinkSound.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.LinkSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LinkSound.Location = new System.Drawing.Point(211, 103);
-            this.LinkSound.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.LinkSound.Maximum = 2147483647D;
-            this.LinkSound.Minimum = -2147483648D;
-            this.LinkSound.MinimumSize = new System.Drawing.Size(1, 16);
-            this.LinkSound.Name = "LinkSound";
-            this.LinkSound.Size = new System.Drawing.Size(590, 38);
-            this.LinkSound.TabIndex = 3;
-            this.LinkSound.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtLinkSound.ButtonSymbol = 61761;
+            this.txtLinkSound.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLinkSound.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.txtLinkSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLinkSound.Location = new System.Drawing.Point(211, 103);
+            this.txtLinkSound.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLinkSound.Maximum = 2147483647D;
+            this.txtLinkSound.Minimum = -2147483648D;
+            this.txtLinkSound.MinimumSize = new System.Drawing.Size(1, 16);
+            this.txtLinkSound.Name = "txtLinkSound";
+            this.txtLinkSound.Size = new System.Drawing.Size(590, 38);
+            this.txtLinkSound.TabIndex = 3;
+            this.txtLinkSound.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNameSound
             // 
@@ -695,6 +562,54 @@
             this.uiAvatar1.TabIndex = 0;
             this.uiAvatar1.Text = "uiAvatar1";
             // 
+            // uiDataGridViewSound
+            // 
+            this.uiDataGridViewSound.AllowUserToAddRows = false;
+            this.uiDataGridViewSound.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiDataGridViewSound.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.uiDataGridViewSound.BackgroundColor = System.Drawing.Color.White;
+            this.uiDataGridViewSound.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridViewSound.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.uiDataGridViewSound.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.uiDataGridViewSound.DefaultCellStyle = dataGridViewCellStyle3;
+            this.uiDataGridViewSound.EnableHeadersVisualStyles = false;
+            this.uiDataGridViewSound.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uiDataGridViewSound.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.uiDataGridViewSound.Location = new System.Drawing.Point(4, 274);
+            this.uiDataGridViewSound.Name = "uiDataGridViewSound";
+            this.uiDataGridViewSound.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDataGridViewSound.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.uiDataGridViewSound.RowHeight = 25;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.uiDataGridViewSound.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.uiDataGridViewSound.RowTemplate.Height = 25;
+            this.uiDataGridViewSound.SelectedIndex = -1;
+            this.uiDataGridViewSound.ShowGridLine = true;
+            this.uiDataGridViewSound.Size = new System.Drawing.Size(810, 269);
+            this.uiDataGridViewSound.TabIndex = 1;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -712,22 +627,16 @@
             this.uiNavBarMain.PerformLayout();
             this.uiTabControlMenuHome.ResumeLayout(false);
             this.tabPageHome.ResumeLayout(false);
-            this.uiTabControlSound.ResumeLayout(false);
-            this.tabControlPageCategory.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.pannelSound.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.uiTitlePanel1.ResumeLayout(false);
             this.tabPageCategory.ResumeLayout(false);
             this.pannelCategory.ResumeLayout(false);
             this.uiPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPageAddSound.ResumeLayout(false);
-            this.uiTitlePanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvListSound)).EndInit();
             this.uiTitlePanel2.ResumeLayout(false);
             this.panelFooter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiDataGridViewSound)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,10 +652,6 @@
         private System.Windows.Forms.TabPage tabPageCategory;
         private System.Windows.Forms.TabPage tabPageSoundHot;
         private Sunny.UI.UITabControl uiTabControlSound;
-        private System.Windows.Forms.TabPage tabControlPageCategory;
-        private Sunny.UI.UIPanel pannelSound;
-        private Sunny.UI.UILabel lbTitileSound;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UITitlePanel uiTitlePanel1;
         private Sunny.UI.UIMarkLabel uiMarkLabel2;
         private Sunny.UI.UIMarkLabel uiMarkLabel1;
@@ -761,8 +666,6 @@
         private Sunny.UI.UIPanel uiPanel1;
         private Sunny.UI.UILabel lbTitleSound;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Sunny.UI.UITitlePanel uiTitlePanel3;
-        private Sunny.UI.UIDataGridView gvListSound;
         private Sunny.UI.UITitlePanel uiTitlePanel2;
         private Sunny.UI.UIButton btnDelete;
         private Sunny.UI.UIButton btnEdit;
@@ -771,11 +674,11 @@
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UIComboBox ccbCategory;
-        private Sunny.UI.UITextBox LinkSound;
+        private Sunny.UI.UITextBox txtLinkSound;
         private Sunny.UI.UITextBox txtNameSound;
         private Sunny.UI.UILabel lbSoundPlaying;
         private Sunny.UI.UITrackBar uiTrackBar1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Sunny.UI.UIDataGridView uiDataGridViewSound;
     }
 }

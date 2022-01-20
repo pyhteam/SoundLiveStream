@@ -1,4 +1,4 @@
-﻿using QuartzTypeLib;
+﻿using SoundLiveStream.Models;
 using SoundLiveStream.Services;
 using Sunny.UI;
 using System;
@@ -8,10 +8,12 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace SoundLiveStream
 {
@@ -54,6 +56,8 @@ namespace SoundLiveStream
         private void Main_Load(object sender, EventArgs e)
         {
             LoadCategory();
+            LoadCombobox();
+            LoadListView();
 
         }
 
@@ -134,10 +138,13 @@ namespace SoundLiveStream
             }
         }
 
+       
         private void lbTitileSound_Click(object sender, EventArgs e, int id)
         {
             MessageBox.Show("Ban dang click bai hat: " + id);
-            player.Open(@"E:\Co-Le-Anh-Khong-Ve-Quynh-Hieu-Bang");
+            player.Open(@"E:\Co-Le-Anh-Khong-Ve-Quynh-Hieu-Bang.mp3");
+            
+
         }
 
         private void LoadCategory()
@@ -172,7 +179,47 @@ namespace SoundLiveStream
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            player.Stop();
+           player.Stop();
+        }
+        private int GetMaxId()
+        {
+            var max = soundService.GetAll().OrderByDescending(x=>x.Id).FirstOrDefault();
+            if (max == null)
+            {
+                return 1;
+            }
+            return max.Id + 1;
+        }
+        private void LoadListView()
+        {
+            var categories = soundService.Get();
+            uiDataGridViewSound.DataSource = categories;
+            
+        }
+        private void LoadCombobox()
+        {
+            var categories = categoryService.GetAll();
+           // ccbCategory.DataSource = categories;
+            foreach (var item in categories)
+            {
+                //ccbCategory.DisplayName(item.Name);
+                ccbCategory.Items.Add(item.Id+" - "+item.Name);
+            }
+            
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int id = GetMaxId();
+            var category = ccbCategory.SelectedItem.ToString().Split("-");
+            var sound = new Sound()
+            {
+                Id = id,
+                Name = txtNameSound.Text,
+                Link = txtLinkSound.Text,
+                CategoryId = Convert.ToInt32(category.FirstOrDefault()),
+            };
+            string alert = soundService.Add(sound) ? "Add Sucess!" : "Add Fail!";
+            MessageBox.Show(alert, alert, MessageBoxButtons.OK);
         }
     }
 }
