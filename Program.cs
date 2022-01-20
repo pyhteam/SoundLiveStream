@@ -1,3 +1,4 @@
+using SoundLiveStream.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace SoundLiveStream
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// private readonly CategoryService categoryService;
+      
         [STAThread]
         static void Main()
         {

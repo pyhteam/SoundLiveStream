@@ -39,7 +39,7 @@ namespace SoundLiveStream.Services
                         Id = 3,
                         Link ="https://soundcloud.com/youngcrizzal/lac?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
                         Name ="Lạc - Rhymastic",
-                        CategoryId =1,
+                        CategoryId =2,
                     }
                 };
             }
@@ -56,6 +56,11 @@ namespace SoundLiveStream.Services
         public Sound GetById(int id)
         {
             return Sounds.FirstOrDefault(x => x.Id == id);
+        }
+        public List<Sound> GetByCategory(int categoryId)
+        {
+           var sounds = Sounds.Where(x=>x.CategoryId == categoryId).OrderByDescending(x=>x.Id).ToList();
+           return sounds;
         }
         public bool Add(Sound sound)
         {
